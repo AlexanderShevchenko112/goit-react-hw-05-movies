@@ -1,0 +1,23 @@
+.navLink {
+  text-decoration: none;
+  color: rgb(72, 72, 202);
+}
+
+.navLink:hover {
+  text-decoration: underline;
+}
+
+.navLink.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  background-color: rgb(195, 213, 230);
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 20px;
+}

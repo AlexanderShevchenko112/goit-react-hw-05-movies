@@ -1,0 +1,57 @@
+.section {
+  background-color: rgb(215, 228, 240);
+  height: 100%;
+  padding-top: 5px;
+  padding-left: 30px;
+  padding-bottom: 400px;
+}
+.backLink {
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+.backLink:hover {
+  background-color: #555;
+}
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #095d96;
+  padding: 10px;
+}
+.subTitle {
+  font-size: 25px;
+  font-weight: bold;
+  color: #095d96;
+  padding: 10px;
+}
+.text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #51517e;
+  padding: 10px;
+}
+.posterSection {
+  display: flex;
+  gap: 20px;
+}
+.dateSection {
+  display: flex;
+  align-items: baseline;
+}
+.item {
+  font-size: 25px;
+  color: #4a4b9c;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+.item:hover {
+  color: #c7670d;
+}
