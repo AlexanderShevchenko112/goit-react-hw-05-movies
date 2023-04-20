@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, Suspense } from 'react';
 import { Link, useParams, useLocation, Outlet } from 'react-router-dom';
 import { getMovieDetails } from 'helpers/fetchMovies';
 import css from 'pages/movieDetails/MovieDetails.module.css';
-
+import defaultImg from 'pages/movieDetails/defaultImg.jpg';
 const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState({});
@@ -26,16 +26,15 @@ const MovieDetails = () => {
       </Link>
       <h1 className={css.title}>Movie Details</h1>
       <div className={css.posterSection}>
-        {movie.poster_path ? (
-          <img
-            src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
-            alt={movie.original_title}
-          />
-        ) : (
-          <div className={css.noImage}>
-            <p>no image</p>
-          </div>
-        )}
+        <img
+          src={
+            movie.poster_path
+              ? `https://image.tmdb.org/t/p/w300/${movie.poster_path}`
+              : defaultImg
+          }
+          alt={movie.original_title}
+          width={300}
+        />
         <div>
           <h3 className={css.subTitle}>
             Movie Title: <span className={css.text}>{movie.title}</span>{' '}
