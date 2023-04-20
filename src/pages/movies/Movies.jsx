@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { searchMovies } from 'helpers/fetchMovies';
-import css from 'components/pages/movies/Movies.module.css';
+import css from 'pages/movies/Movies.module.css';
+import MoviesList from 'components/moviesList/MoviesList';
+
 const Movies = () => {
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
@@ -35,15 +36,7 @@ const Movies = () => {
       <button className={css.button} onClick={handleSearch}>
         Search
       </button>
-      <ul className={css.list}>
-        {movies.map(movie => (
-          <li key={movie.id}>
-            <Link className={css.item} to={`/movies/${movie.id}`}>
-              {movie.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <MoviesList movies={movies}></MoviesList>
       {movies.length === 0 && status === 'resolved' && (
         <h3>Nothing was found. Please try another search.</h3>
       )}

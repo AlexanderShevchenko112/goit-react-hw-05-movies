@@ -55,3 +55,10 @@
 .item:hover {
   color: #c7670d;
 }
+.noImage {
+  display: block;
+  width: 300px;
+  height: 500px;
+  border: 2px solid black;
+  text-align: center;
+}

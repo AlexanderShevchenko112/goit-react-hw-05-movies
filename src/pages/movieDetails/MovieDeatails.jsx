@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, Suspense } from 'react';
 import { Link, useParams, useLocation, Outlet } from 'react-router-dom';
 import { getMovieDetails } from 'helpers/fetchMovies';
-import css from 'components/pages/movieDetails/MovieDetails.module.css';
+import css from 'pages/movieDetails/MovieDetails.module.css';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -26,11 +26,15 @@ const MovieDetails = () => {
       </Link>
       <h1 className={css.title}>Movie Details</h1>
       <div className={css.posterSection}>
-        {movie.poster_path && (
+        {movie.poster_path ? (
           <img
             src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
             alt={movie.original_title}
           />
+        ) : (
+          <div className={css.noImage}>
+            <p>no image</p>
+          </div>
         )}
         <div>
           <h3 className={css.subTitle}>
